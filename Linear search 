@@ -1,0 +1,21 @@
+include <stdio.h>
+int linear_search (int A[],int n,int x)
+{
+  for(int i = 0; i < n;i++);
+  {
+    if(x ==A[i])
+    return i;
+  }
+  return -1;
+}
+int main ()
+{
+  int A[5];
+  printf("Enter 5 number: ");
+  for(int i = 0;i < 5;i++){
+    scanf("%d",&A[i]);
+  }
+  int p = linear_search(A,5,4);
+  printf("The element at %d",p);
+  return 0;
+}
