@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void bubbleSort(int a[], int n) {
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (a[j] > a[j+1]) {
+                int t = a[j];
+                a[j] = a[j+1];
+                a[j+1] = t;
+            }
+}
+
+int binarySearch(int a[], int n, int k) {
+    int l = 0, h = n - 1;
+    while (l <= h) {
+        int m = (l + h) / 2;
+        if (a[m] == k)
+            return m;
+        if (a[m] < k)
+            l = m + 1;
+        else
+            h = m - 1;
+    }
+    return -1;
+}
+
+int main() {
+    int n, k, i;
+    scanf("%d", &n);
+    int a[n];
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+
+    bubbleSort(a, n);
+    scanf("%d", &k);
+    printf("%d", binarySearch(a, n, k));
+    return 0;
+}
+
+
